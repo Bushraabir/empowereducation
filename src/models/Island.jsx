@@ -11,7 +11,7 @@ const Island = (props) => {
 
   const { nodes, materials } = useGLTF(islandModel);
 
-  const SENSITIVITY = 0.002; // Sensitivity for horizontal movement
+  const SENSITIVITY = 0.001; // Sensitivity for horizontal movement
 
   // Pointer down: Start tracking drag
   const handlePointerDown = (event) => {
@@ -34,6 +34,9 @@ const Island = (props) => {
 
       // Update last pointer position for next movement calculation
       setLastPointer([event.clientX, event.clientY]);
+
+      // Send current position to parent component
+      props.setIslandPosition([currentRotation[0], currentRotation[1], currentRotation[2]]);
     }
   };
 

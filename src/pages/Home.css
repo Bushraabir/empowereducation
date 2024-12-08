@@ -1,0 +1,51 @@
+/* Import the gaming font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Styles for the Next Stage Button */
+.next-stage-button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1E40AF; /* Blue background for the button */
+  color: white;
+  padding: 20px 40px; /* Increased padding for better visibility */
+  font-size: 20px; /* Larger text size */
+  border-radius: 12px; /* Rounded corners */
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive; /* Gaming-style font */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Elevated shadow effect */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+  z-index: 20; /* Ensure it's on top of other elements */
+}
+
+/* Hover effect */
+.next-stage-button:hover {
+  background-color: #2563EB; /* Darker blue on hover */
+  transform: translateX(-50%) scale(1.05); /* Slight scaling on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+  color: #fefefe; /* Change text color on hover */
+}
+
+/* Active (clicked) effect */
+.next-stage-button:active {
+  transform: translateX(-50%) scale(1); /* Slight click-down effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Less prominent shadow on click */
+}
+
+/* Add a pulse effect for attention */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.next-stage-button {
+  animation: pulse 1s infinite; /* Add pulse animation */
+}
