@@ -80,7 +80,7 @@ const HomeInfo = ({ currentStage }) => {
         {lines.map((line, index) => (
           <div key={index}>
             <Link
-              to={currentStage === 1 ? "/about" : currentStage === 2 ? "/features" : currentStage === 3 ? "/join" : currentStage === 4 ? "/contact" : currentStage === 5 ? "/contact" : "/join"}
+              to={currentStage === 1 ? "/about_us" : currentStage === 2 ? "/features" : currentStage === 3 ? "/join_us" : currentStage === 4 ? "/contact" : currentStage === 5 ? "/contact" : "/join_us"}
               className={`animate-typing ${hovered ? 'hovered' : ''}`}
               onMouseEnter={handleTextHover}
               onMouseLeave={handleTextLeave}
