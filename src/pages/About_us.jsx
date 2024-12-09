@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import 'react-vertical-timeline-component/style.min.css';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { FaGamepad, FaRocket, FaTrophy, FaGraduationCap } from 'react-icons/fa';
-import './about_us.css'; // Importing the separate CSS file for styling
+import './About_us.css'; // Importing the separate CSS file for styling
 
 const About_us = () => {
   return (
