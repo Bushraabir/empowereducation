@@ -3,7 +3,6 @@ import { FiUser } from 'react-icons/fi';
 import { IoMailOutline } from 'react-icons/io5';
 import { FaLock } from 'react-icons/fa';
 
-// Importing the CSS
 import './Join_us.css';
 
 const Join_us = () => {

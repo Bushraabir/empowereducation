@@ -84,8 +84,8 @@ const Home = () => {
           camera={{ near: 0.1, far: 1000, position: [0, 0, 5] }}
         >
           {/* Lights */}
-          <pointLight intensity={0.8} />
-          <ambientLight intensity={0.02} />
+          <pointLight intensity={1.8} />
+          <ambientLight intensity={1.02} />
           <spotLight intensity={1.5} />
           <hemisphereLight intensity={0.5} skyColor=" rgba(249, 115, 22, 0.15)" groundColor="#000000" />
           <directionalLight position={[1, 1, 1]} intensity={0.05} />

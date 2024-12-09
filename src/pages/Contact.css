@@ -1,0 +1,93 @@
+/* General Container */
+.empowered-contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #1c1c28, #23232f);
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+  }
+  
+  /* Content Styling */
+  .empowered-contact-content {
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  .empowered-contact-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  .empowered-highlight {
+    color: #00aaff;
+  }
+  
+  .empowered-contact-description {
+    font-size: 1.1rem;
+    color: #c0c4cc;
+    margin-bottom: 40px;
+  }
+  
+  /* Form Styling */
+  .empowered-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Glass Effect Inputs */
+  .glass-input,
+  .glass-textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    font-size: 1rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+  
+  .glass-input::placeholder,
+  .glass-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .glass-input:focus,
+  .glass-textarea:focus {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Button */
+  .empowered-contact-button {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background: #00aaff;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .empowered-contact-button:hover {
+    background: #0088cc;
+  }
+  
+  /* Status Message */
+  .empowered-contact-status {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #00ff7f; /* Green for success */
+  }
+  
