@@ -13,7 +13,7 @@ const fadeIn = {
 
 const Features = () => {
   return (
-    <div className="empowered-features-container">
+    <div className="mt-20 empowered-features-container">
       {/* Particles Background */}
       <ParticleBackground />
 
