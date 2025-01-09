@@ -1,0 +1,11 @@
+Model Information:
+* title:	Concerto
+* source:	https://sketchfab.com/3d-models/concerto-c8f9ff8fd8fd404b8432ba0982c40034
+* author:	Gregory Khodyrev (https://sketchfab.com/gmaaailgrisha)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Concerto" (https://sketchfab.com/3d-models/concerto-c8f9ff8fd8fd404b8432ba0982c40034) by Gregory Khodyrev (https://sketchfab.com/gmaaailgrisha) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
