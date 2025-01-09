@@ -1,6 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
 import Navbar from "./components/Navbar"
-import { About_us, Home, Features, Join_us, Contact } from "./pages"
+import { About_us, Home, Features,  Contact } from "./pages"
 
 const App = () => {
   return (
@@ -11,7 +11,6 @@ const App = () => {
               <Route path='/' element={<Home />} />
               <Route path='/about_us' element={<About_us />} />
               <Route path='/features' element={<Features />} />
-              <Route path='/join_us' element={<Join_us />} />
               <Route path='/contact' element={<Contact />} />
             </Routes>
            

@@ -1,5 +1,5 @@
 import React from 'react';
-import { loadFull } from 'tsparticles'; // Import required for advanced configuration
+import { loadFull } from 'tsparticles'; // Required for advanced configuration
 import Particles from 'react-tsparticles';
 
 const ParticleBackground = () => {
@@ -11,44 +11,44 @@ const ParticleBackground = () => {
   const particlesOptions = {
     fullScreen: {
       enable: true, // Ensures particles cover the full viewport
-      zIndex: -1, // Keeps particles behind other elements
+      zIndex: -1, // Keeps particles behind all elements
     },
     particles: {
       number: {
-        value: 150, // Number of particles
+        value: 120, // Slightly fewer particles for better performance
         density: {
           enable: true,
-          value_area: 700, // Density area for particles
+          value_area: 800, // Particles' area density
         },
       },
       color: {
-        value: "#ff6b3f", // Neon orange particles
+        value: "#7afcff", // Soft neon blue for the particles
       },
       shape: {
-        type: "circle", // Shape of particles
+        type: "circle", // Simple circular particles
       },
       opacity: {
-        value: 0.7, // Base opacity of particles
+        value: 0.6, // Base opacity of particles
         anim: {
           enable: true,
-          speed: 1,
-          opacity_min: 0.2, // Minimum opacity during animation
+          speed: 2,
+          opacity_min: 0.1, // Minimum opacity during animation
         },
       },
       size: {
-        value: 4, // Size of particles
+        value: 3, // Base size of particles
         random: true, // Randomize sizes
         anim: {
           enable: true,
-          speed: 5,
-          size_min: 1, // Minimum size during animation
+          speed: 4,
+          size_min: 0.5, // Minimum size during animation
         },
       },
       move: {
         enable: true,
-        speed: 3, // Speed of particle motion
+        speed: 2, // Particle movement speed
         direction: "none", // No specific direction
-        random: true, // Random motion
+        random: true, // Enable random movement
         straight: false, // Disable straight-line motion
         out_mode: "out", // Particles move out of bounds
         bounce: false, // Disable bouncing
@@ -58,19 +58,23 @@ const ParticleBackground = () => {
       events: {
         onhover: {
           enable: true,
-          mode: "repulse", // Particles repel on hover
+          mode: "repulse", // Particles repel when hovered
         },
         onclick: {
           enable: true,
-          mode: "push", // Particles are added on click
+          mode: "bubble", // Create a "bubble" effect on click
         },
       },
       modes: {
         repulse: {
-          distance: 100, // Distance for repulse effect
+          distance: 150, // Distance for repulsion effect
+          duration: 0.4,
         },
-        push: {
-          quantity: 4, // Number of particles added on click
+        bubble: {
+          distance: 200,
+          size: 6,
+          duration: 0.3,
+          opacity: 0.8,
         },
       },
     },

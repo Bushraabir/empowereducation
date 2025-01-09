@@ -1,66 +1,73 @@
-/* Importing the game font from Google Fonts */
+/* Importing Retro Font */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-html, body {
-    height: 100%;  /* Ensures the body takes up full viewport height */
-    margin: 0;     /* Prevents unwanted space/margin around the body */
-  }
+
 /* Global Styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
 }
 
-/* Body and Background */
+html,
 body {
-  background-color: #121212; /* Dark theme background */
-  color: #fff;
-  font-size: 16px;
+    height: 100%;
+    background: linear-gradient(135deg, #1e003e, #090a30);
+    color: #ffffff;
+    overflow-x: hidden;
 }
 
 /* Hero Section */
 .hero {
     position: relative;
     height: 100vh;
-    background-color: #121212; /* Dark background in case video doesn't load */
-    color: white;
-    text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    background: radial-gradient(circle, #001b44 30%, #090a30 100%);
+    overflow: hidden;
 }
 
 .hero-content {
-  z-index: 2;
+    z-index: 2;
+    position: relative;
 }
 
 .hero-heading {
-  font-size: 3rem;
-  color: #ff00ff; /* Neon pink for hero heading */
-  text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
-  margin-bottom: 20px;
+    font-size: 4rem;
+    color: #00fff7;
+    text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 30px #00fff7;
+    margin-bottom: 20px;
+}
+
+.hero-subheading {
+    font-size: 1.5rem;
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    margin-bottom: 40px;
 }
 
 .cta-btn {
-  background-color: #ff6347; /* Neon orange */
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1.4rem;
-  cursor: pointer;
-  border-radius: 30px;
-  box-shadow: 0 0 15px rgba(255, 99, 71, 0.7);
-  transition: all 0.3s ease-in-out;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background-color: #8900f2;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 0 10px #8900f2, 0 0 20px #8900f2;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
 .cta-btn:hover {
-  background-color: #ff4500;
-  box-shadow: 0 0 30px rgba(255, 99, 71, 1);
+    background-color: #ff007a;
+    box-shadow: 0 0 20px #ff007a, 0 0 40px #ff007a;
 }
 
 .cta-btn:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
 }
 
 /* Parallax Background */
@@ -70,185 +77,140 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    overflow: hidden; /* To ensure video is clipped correctly */
-  }
-  
-  .parallax-background video {
+    overflow: hidden;
+}
+
+.parallax-background video {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the video covers the entire area */
-    transform: translate(-50%, -50%); /* Centers the video */
-    opacity: 0.1; /* Optional: controls the visibility of the video */
-  }
-  
-/* Our Goal Section */
-.section {
-  padding: 80px 20px;
-  text-align: center;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    opacity: 0.1;
 }
 
-.goal-section {
-  background: #1a1a1a;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+/* Section Styles */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.mission-section {
+    background: linear-gradient(135deg, #1a0037, #000c40);
 }
 
 .subheading {
-  font-size: 2.5rem;
-  color: #ff6347; /* Neon orange */
-  margin-bottom: 30px;
-  text-shadow: 0 0 10px #ff6347;
+    font-size: 2.5rem;
+    color: #00e6ff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00e6ff, 0 0 20px #00e6ff;
 }
 
 .section-text {
-  font-size: 1.2rem;
-  color: #ddd;
-  margin-bottom: 30px;
+    font-size: 1.2rem;
+    color: #d9d9d9;
+    line-height: 1.6;
+    margin-bottom: 40px;
 }
 
-.badge-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.badge {
-  background: #2f74d0; /* Blue background for badges */
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  color: white;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.badge:hover {
-  transform: scale(1.1);
-  background: #ff6347; /* Neon orange on hover */
-}
-
-/* Timeline Section */
 .timeline-section {
-  background: #121212;
-  padding: 80px 20px;
+    background: linear-gradient(135deg, #0a002b, #001022);
 }
 
-.vertical-timeline-title {
-  color: #fff;
-  font-size: 1.5rem;
-  margin: 10px 0;
-}
-
+/* Timeline Styles */
 .vertical-timeline-element {
-  background-color: #333;
-  border: 2px solid #444;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #1a0037;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
 }
 
 .vertical-timeline-element:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
 }
 
-.vertical-timeline-element p {
-  color: #bbb;
-  font-size: 1rem;
-  margin-top: 10px;
+.vertical-timeline-title {
+    font-size: 1.6rem;
+    color: #00fff7;
+    margin-bottom: 10px;
 }
 
-.vertical-timeline-element .vertical-timeline-title {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #ff6347; /* Neon orange */
+.vertical-timeline-date {
+    font-size: 1rem;
+    color: #ff00ff;
 }
 
-.vertical-timeline-element .vertical-timeline-date {
-  color: #ff6347;
-  font-weight: bold;
+.vertical-timeline-element ul {
+    list-style-type: square;
+    padding-left: 20px;
+    color: #d9d9d9;
 }
 
-/* Icons in Timeline */
+.vertical-timeline-element ul li {
+    margin-bottom: 5px;
+}
+
 .vertical-timeline-element-icon {
-  background-color: #ff6347; /* Neon orange */
-  color: white;
-  font-size: 2rem;
-  border-radius: 50%;
-  padding: 15px;
-  box-shadow: 0 0 15px rgba(255, 99, 71, 0.7);
+    font-size: 2.5rem;
+    color: #fff;
+    background-color: #ff6347;
+    border-radius: 50%;
+    padding: 10px;
 }
 
-.vertical-timeline-element-icon i {
-  font-size: 2rem;
+.vertical-timeline-element-icon:hover {
+    background-color: #ff007a;
 }
 
-/* CTA Section */
-.cta-section {
-  text-align: center;
-  padding: 60px 20px;
-  background-color: #1a1a1a;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.cta-heading {
-  font-size: 2.5rem;
-  color: #ff6347; /* Neon orange */
-  margin-bottom: 30px;
-  text-shadow: 0 0 10px #ff6347;
-}
-
-.cta-btn {
-  background-color: #ff6347; /* Neon orange */
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1.4rem;
-  cursor: pointer;
-  border-radius: 30px;
-  box-shadow: 0 0 15px rgba(255, 99, 71, 0.7);
-  transition: all 0.3s ease-in-out;
-}
-
-.cta-btn:hover {
-  background-color: #ff4500;
-  box-shadow: 0 0 30px rgba(255, 99, 71, 1);
-}
-
-.cta-btn:active {
-  transform: scale(0.95);
-}
-
-/* Media Queries */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .badge-container {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .vertical-timeline-element {
-    padding: 15px;
-  }
-
-  .cta-btn {
-    font-size: 1.2rem;
-    padding: 12px 24px;
-  }
+    .hero-heading {
+        font-size: 2.5rem;
+    }
+    .cta-btn {
+        font-size: 1rem;
+        padding: 12px 24px;
+    }
+    .subheading {
+        font-size: 2rem;
+    }
+    .section-text {
+        font-size: 1rem;
+    }
+    .vertical-timeline-element {
+        padding: 15px;
+    }
+    .vertical-timeline-title {
+        font-size: 1.4rem;
+    }
+    .vertical-timeline-date {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
-  .hero-heading {
-    font-size: 2rem;
-  }
-
-  .cta-btn {
-    font-size: 1.1rem;
-    padding: 10px 20px;
-  }
+    .hero-heading {
+        font-size: 2rem;
+    }
+    .cta-btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+    .subheading {
+        font-size: 1.8rem;
+    }
+    .section-text {
+        font-size: 0.9rem;
+    }
+    .vertical-timeline-element {
+        padding: 10px;
+    }
+    .vertical-timeline-title {
+        font-size: 1.3rem;
+    }
 }

@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaTrophy, FaBookOpen, FaMoneyBillWave, FaPlaneDeparture, FaUsers, FaHandshake, FaMapMarkedAlt, FaGamepad } from 'react-icons/fa';
-import ParticleBackground from '../components/particles.jsx'; // Import the particle background component
+import ParticleBackground from '../components/particles.jsx';
 import './Features.css';
 
-// Animation for the timeline's milestones
+// Improved animation for timeline's milestones
 const fadeIn = {
-  initial: { opacity: 0, scale: 0.9, y: 50 },
-  animate: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-  hover: { scale: 1.1, y: -10, transition: { duration: 0.3, ease: "easeInOut" } },
+  initial: { opacity: 0, scale: 0.95, y: 40 },
+  animate: { opacity: 1, scale: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
+  hover: { scale: 1.05, y: -8, transition: { duration: 0.3, ease: "easeInOut" } },
 };
 
 const Features = () => {
@@ -17,18 +17,19 @@ const Features = () => {
       {/* Particles Background */}
       <ParticleBackground />
 
+      {/* Features Heading Section */}
       <motion.div
         className="empowered-features-heading"
-        initial={{ opacity: 0, y: -100 }}
+        initial={{ opacity: 0, y: -120 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
-        <h1>EmpowerEd: Milestones to Success</h1>
-        <p>Take a step forward in your educational journey with us. Each feature is a milestone toward achieving your goals!</p>
+        <h1>Global Collaboration</h1>
+        <p>Bringing students worldwide together to share knowledge, innovate, and solve real-world problems through events and collaboration.</p>
       </motion.div>
 
+      {/* Timeline for Features */}
       <div className="timeline">
-        {/* Feature 1: Free Study Resources */}
         <motion.div
           className="timeline-step"
           variants={fadeIn}
@@ -40,12 +41,11 @@ const Features = () => {
             <FaBookOpen />
           </div>
           <div className="timeline-content">
-            <h2>Free Study Resources</h2>
-            <p>Unlock a treasure trove of study materials, guides, and tutorials – all free of charge!</p>
+            <h2>Student Hub</h2>
+            <p>A safe space for students to connect, share resources, and access mentorship opportunities to foster personal and academic growth.</p>
           </div>
         </motion.div>
 
-        {/* Feature 2: Scholarships */}
         <motion.div
           className="timeline-step"
           variants={fadeIn}
@@ -57,12 +57,11 @@ const Features = () => {
             <FaTrophy />
           </div>
           <div className="timeline-content">
-            <h2>Scholarships (Full & Partial)</h2>
-            <p>Get the support you need with full or partial scholarships designed to make your dreams come true.</p>
+            <h2>Mental Health Support</h2>
+            <p>AI-driven tools to guide students through mental health challenges, offering coping strategies and emotional support to promote well-being.</p>
           </div>
         </motion.div>
 
-        {/* Feature 3: Funding for Research */}
         <motion.div
           className="timeline-step"
           variants={fadeIn}
@@ -74,12 +73,11 @@ const Features = () => {
             <FaMoneyBillWave />
           </div>
           <div className="timeline-content">
-            <h2>Funding for Research & Projects</h2>
-            <p>We fund innovative research and community projects to bring your creative ideas to life.</p>
+            <h2>Funding for Research</h2>
+            <p>Financial support for innovative research projects, empowering students to explore, experiment, and contribute to academic advancements.</p>
           </div>
         </motion.div>
 
-        {/* Feature 4: Visa and Passport Assistance */}
         <motion.div
           className="timeline-step"
           variants={fadeIn}
@@ -91,12 +89,11 @@ const Features = () => {
             <FaPlaneDeparture />
           </div>
           <div className="timeline-content">
-            <h2>Visa & Passport Assistance</h2>
-            <p>Navigate the complexities of visa and passport applications with expert guidance from our team.</p>
+            <h2>Visa and Passport Assistance</h2>
+            <p>Comprehensive support to help students navigate visa and passport applications, ensuring a smooth journey to studying abroad.</p>
           </div>
         </motion.div>
 
-        {/* Feature 5: Gamified Success Journey */}
         <motion.div
           className="timeline-step"
           variants={fadeIn}
@@ -108,12 +105,11 @@ const Features = () => {
             <FaGamepad />
           </div>
           <div className="timeline-content">
-            <h2>Gamified Success Journey</h2>
-            <p>Earn badges and rewards as you progress through milestones – learning made fun!</p>
+            <h2>Competition Organization</h2>
+            <p>We organize creative competitions to help students showcase their skills, innovate, and win recognition in various fields.</p>
           </div>
         </motion.div>
 
-        {/* Feature 6: Personalized Support */}
         <motion.div
           className="timeline-step"
           variants={fadeIn}
@@ -125,12 +121,11 @@ const Features = () => {
             <FaHandshake />
           </div>
           <div className="timeline-content">
-            <h2>Personalized Support</h2>
-            <p>Get personalized guidance from our mentors and experts, tailored just for you.</p>
+            <h2>Scholarships</h2>
+            <p>Offering full and partial scholarships to both national and international students, helping ease the financial burden of education.</p>
           </div>
         </motion.div>
 
-        {/* Feature 7: Global Network & Community */}
         <motion.div
           className="timeline-step"
           variants={fadeIn}
@@ -142,12 +137,11 @@ const Features = () => {
             <FaUsers />
           </div>
           <div className="timeline-content">
-            <h2>Global Network & Community</h2>
-            <p>Connect with a vibrant community of like-minded students and educators around the world.</p>
+            <h2>Global Network</h2>
+            <p>Connecting students from across the world to foster collaboration, mentorship, and community growth.</p>
           </div>
         </motion.div>
 
-        {/* Feature 8: Success Stories and Mentorship */}
         <motion.div
           className="timeline-step"
           variants={fadeIn}
@@ -159,8 +153,8 @@ const Features = () => {
             <FaMapMarkedAlt />
           </div>
           <div className="timeline-content">
-            <h2>Success Stories & Mentorship</h2>
-            <p>Learn from real success stories and get mentorship to guide you to your next victory!</p>
+            <h2>Success Stories</h2>
+            <p>Highlighting inspiring stories of students who have overcome obstacles and achieved success through our platform’s support.</p>
           </div>
         </motion.div>
       </div>
