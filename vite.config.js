@@ -3,21 +3,33 @@ import react from '@vitejs/plugin-react'
 
 
 export default defineConfig({
-  plugins: [react()],
- 
-  assetsInclude: ['**/*.glb'],
-  
-  
-  resolve: {
-    alias: {
-      '@': '/src',  
-    },
-  },
 
- 
-  server: {
-    fs: {
-      strict: false  
-    }
-  }
+    base: '/empowereducation/',
+
+    plugins: [
+        react(),
+    ],
+
+    assetsInclude: ['**/*.glb'],
+
+    resolve: {
+        alias: {
+            '@': '/src',
+        },
+    },
+
+    server: {
+        fs: {
+            strict: false,
+        },
+    },
+
+    build: {
+
+        rollupOptions: {
+            output: {
+                manualChunks: undefined,
+            },
+        },
+    },
 })
