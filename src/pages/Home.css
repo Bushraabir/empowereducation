@@ -1,51 +1,164 @@
-/* Import the gaming font */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+/* Main Container */
 
-/* Styles for the Next Stage Button */
-.next-stage-button {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #1E40AF; /* Blue background for the button */
-  color: white;
-  padding: 20px 40px; /* Increased padding for better visibility */
-  font-size: 20px; /* Larger text size */
-  border-radius: 12px; /* Rounded corners */
-  cursor: pointer;
-  font-family: 'Press Start 2P', cursive; /* Gaming-style font */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Elevated shadow effect */
-  transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
-  z-index: 20; /* Ensure it's on top of other elements */
+.home-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
-/* Hover effect */
-.next-stage-button:hover {
-  background-color: #2563EB; /* Darker blue on hover */
-  transform: translateX(-50%) scale(1.05); /* Slight scaling on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* More prominent shadow */
-  color: #fefefe; /* Change text color on hover */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    /* Ensures it stays in the background */
 }
 
-/* Active (clicked) effect */
-.next-stage-button:active {
-  transform: translateX(-50%) scale(1); /* Slight click-down effect */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Less prominent shadow on click */
+.background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the video covers the entire background */
 }
 
-/* Add a pulse effect for attention */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Overlay */
+
+.overlay {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    /* Transparent overlay */
+}
+
+
+/* Logo */
+
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Hero Section */
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+
+/* Call-to-Action Button */
+
+.cta-button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
     transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
+    background-color: #ff4500;
+    box-shadow: 0 4px 10px rgba(255, 69, 0, 0.5);
 }
 
-.next-stage-button {
-  animation: pulse 1s infinite; /* Add pulse animation */
+
+/* Scroll Indicator */
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+}
+
+.scroll-indicator p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+.scroll-icon {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    animation: bounce 2s infinite;
+}
+
+
+/* Keyframes */
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

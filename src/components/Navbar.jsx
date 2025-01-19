@@ -34,7 +34,7 @@ const Navbar = () => {
       </motion.div>
       <nav className="flex flex-col gap-5 text-lg font-medium md:flex-row md:gap-7">
       <NavLink
-          to="/empowereducation/"
+          to="/empowereducation"
           className={({ isActive }) =>
             `nav-item ${isActive ? 'text-yellow-300' : 'text-white'} hover:text-yellow-300`
           }

@@ -1,10 +1,30 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
-import Navbar from "./components/Navbar"
-import { About_us, Home, Features,  Contact } from "./pages"
-import Loader from "./components/Loader"
+import { useState, useEffect } from 'react';
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import { About_us, Home, Features, Contact } from "./pages";
+import { Canvas } from "@react-three/fiber";
+import { Html } from "@react-three/drei";
+
+const Loader = () => (
+  <Canvas>
+    <Html center>
+      <div>Loading...</div>
+    </Html>
+  </Canvas>
+);
 
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <main className="bg-slate-300/20">
       <Router>
@@ -14,7 +34,7 @@ const App = () => {
           <>
             <Navbar />
             <Routes>
-              <Route path='/empowereducation/' element={<Home />} />
+            <Route path="/empowereducation" element={<Home />} />
               <Route path='/about_us' element={<About_us />} />
               <Route path='/features' element={<Features />} />
               <Route path='/contact' element={<Contact />} />
@@ -23,7 +43,7 @@ const App = () => {
         )}
       </Router>
     </main>
-  )
-}
+  );
+};
 
-export default App
+export default App;

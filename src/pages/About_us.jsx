@@ -1,33 +1,43 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useNavigate } from 'react-router-dom';
-import 'react-vertical-timeline-component/style.min.css';
+import Lottie from 'lottie-react';
+
+import educationAnimation from '../assets/education.json'; // Example Lottie animation
+import videoSrc from '../assets/home.mp4';
+
+import teamImage from '../assets/logo.jpg';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { FaGamepad, FaRocket, FaTrophy, FaGraduationCap, FaTree, FaGlobe } from 'react-icons/fa';
+import 'react-vertical-timeline-component/style.min.css';
 import './About_us.css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About_us = () => {
   const sectionRef = useRef(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // GSAP animation on scroll for sections
-    gsap.fromTo(
-      sectionRef.current,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 80%',
-          end: 'bottom 20%',
-          scrub: true,
-        },
-      }
-    );
+    if (sectionRef.current) {
+      gsap.fromTo(
+        sectionRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            scrub: true,
+          },
+        }
+      );
+    }
   }, []);
 
   return (
@@ -54,8 +64,8 @@ const About_us = () => {
           </motion.button>
         </div>
         <div className="parallax-background">
-          <video autoPlay loop muted>
-            <source src="src/assets/aboutus.mp4" type="video/mp4" />
+          <video autoPlay loop muted className="background-video">
+            <source src={videoSrc} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -63,36 +73,42 @@ const About_us = () => {
 
       {/* Our Mission Section */}
       <section className="section mission-section" ref={sectionRef}>
-        <motion.h2
-          className="subheading"
-          initial={{ x: -100 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-        >
-          Our Mission
-        </motion.h2>
-        <motion.p
-          className="align-middle section-text"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 1.5 }}
-        >
-          We are EmpowerEd, a nonprofit Organization committed to making education accessible for everyone. Our mission is to eliminate financial barriers by providing free resources, scholarships, project funding, and assistance with visa and passport processes. We strive to empower students to reach their full potential, regardless of their background.
-        </motion.p>
+        <div className="mission-container">
+          <motion.div
+            className="text-content"
+            initial={{ x: -100 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+          >
+            <h2 className="subheading">Our Mission</h2>
+            <p>
+              We are EmpowerEd, a nonprofit Organization committed to making education accessible for everyone. Our mission is to eliminate financial barriers by providing free resources, scholarships, project funding, and assistance with visa and passport processes. We strive to empower students to reach their full potential, regardless of their background.
+            </p>
+          </motion.div>
+          <motion.img
+            src={teamImage}
+            alt="Our Mission"
+            className="mission-image"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+          />
+        </div>
+      </section>
+
+      {/* Lottie Animation Section */}
+      <section className="animation-section">
+        <Lottie animationData={educationAnimation} className="lottie-animation" />
+        <p className="animation-text">
+          EmpowerEd is all about fostering creativity and innovation. Join us in creating a brighter future for students worldwide.
+        </p>
       </section>
 
       {/* Timeline Section */}
       <section className="section timeline-section">
-        <motion.h2
-          className="subheading"
-          initial={{ scale: 0.8 }}
-          whileInView={{ scale: 1 }}
-          transition={{ type: "spring", stiffness: 120 }}
-        >
-          Our Journey
-        </motion.h2>
+        <h2 className="subheading">Our Journey</h2>
+        <img src={educationAnimation} alt="Timeline" className="timeline-banner" />
         <VerticalTimeline lineColor="#1a0037">
-          {/* Timeline Event 1 */}
           <VerticalTimelineElement
             date="November, 2024"
             iconStyle={{ background: '#ff6347', color: '#fff' }}
@@ -104,7 +120,6 @@ const About_us = () => {
             </p>
           </VerticalTimelineElement>
 
-          {/* Timeline Event 2 */}
           <VerticalTimelineElement
             date="November, 2024"
             iconStyle={{ background: '#1abc9c', color: '#fff' }}
@@ -116,7 +131,6 @@ const About_us = () => {
             </p>
           </VerticalTimelineElement>
 
-          {/* Timeline Event 3 */}
           <VerticalTimelineElement
             date="18th - 24th December, 2024"
             iconStyle={{ background: '#3498db', color: '#fff' }}
@@ -124,7 +138,7 @@ const About_us = () => {
           >
             <h3 className="vertical-timeline-title">Idea Hub Contest</h3>
             <p>
-              Our first contest, the Idea Hub Contest, began on December 18 and ended on December 24. This contest encouraged participants to tackle a wide range of topics, including:
+              Our first contest, the Idea Hub Contest, began on December 18 and ended on December 24. This contest encouraged participants to tackle a wide range of topics:
               <ul>
                 <li>STEM-related innovations</li>
                 <li>Social issues and human rights</li>
@@ -134,7 +148,6 @@ const About_us = () => {
             </p>
           </VerticalTimelineElement>
 
-          {/* Timeline Event 4 */}
           <VerticalTimelineElement
             date="19th December, 2024"
             iconStyle={{ background: '#e74c3c', color: '#fff' }}
@@ -144,14 +157,13 @@ const About_us = () => {
             <p>
               On December 19, we introduced an exclusive membership program featuring:
               <ul>
-                <li>Microsoft Environment Premium: Access to advanced productivity tools.</li>
-                <li>Turnitin Premium: Advanced plagiarism detection for academic and professional writing.</li>
-                <li>Certificates & Membership Cards: Recognition of premium membership.</li>
+                <li>Microsoft Environment Premium</li>
+                <li>Turnitin Premium</li>
+                <li>Certificates & Membership Cards</li>
               </ul>
             </p>
           </VerticalTimelineElement>
 
-          {/* Timeline Event 5 */}
           <VerticalTimelineElement
             date="24th December, 2024 - 23rd January, 2025"
             iconStyle={{ background: '#9b59b6', color: '#fff' }}
@@ -159,16 +171,14 @@ const About_us = () => {
           >
             <h3 className="vertical-timeline-title">Collaboration: Life in Extreme Environments</h3>
             <p>
-              We introduced a 1-Month Research Program focused on exploring life in extreme environments. The program, from December 24 to January 23, delved into:
+              A 1-Month Research Program focused on life in extreme environments. Topics included:
               <ul>
-                <li>Extremophiles in acidic springs, deep-sea vents, and icy terrains</li>
-                <li>Implications for finding life on planets like Mars, Europa, and Titan</li>
-                <li>Biosignatures, planetary habitability, and life adaptability</li>
+                <li>Extremophiles in extreme terrains</li>
+                <li>Biosignatures and planetary habitability</li>
               </ul>
             </p>
           </VerticalTimelineElement>
 
-          {/* Timeline Event 6 */}
           <VerticalTimelineElement
             date="27th December, 2024 - 5th January, 2025"
             iconStyle={{ background: '#2ecc71', color: '#fff' }}
@@ -176,28 +186,21 @@ const About_us = () => {
           >
             <h3 className="vertical-timeline-title">Tree Planting Campaign</h3>
             <p>
-              From December 27 to January 5, we hosted a Tree Planting Campaign to promote sustainability. Participants had the chance to:
-              <ul>
-                <li>Win verified certificates</li>
-                <li>Gain exclusive membership opportunities</li>
-                <li>Contribute to a greener planet</li>
-              </ul>
+              Hosted a Tree Planting Campaign promoting sustainability with exclusive rewards.
             </p>
           </VerticalTimelineElement>
 
-          {/* Timeline Event 7 */}
           <VerticalTimelineElement
             date="Late December, 2024"
             iconStyle={{ background: '#f39c12', color: '#fff' }}
             icon={<FaGlobe />}
           >
-            <h3 className="vertical-timeline-title">Welcoming Our First International Member</h3>
+            <h3 className="vertical-timeline-title">First International Member</h3>
             <p>
-              In late December, we proudly welcomed Roua Souissi, our first foreign member and Cross-Cultural Ambassador. Her diverse insights and global perspective bring new dimensions to EmpowerEd’s mission.
+              Welcomed Roua Souissi, our first international member and Cross-Cultural Ambassador.
             </p>
           </VerticalTimelineElement>
 
-          {/* Timeline Event 8 */}
           <VerticalTimelineElement
             date="Ongoing"
             iconStyle={{ background: '#9b59b6', color: '#fff' }}
@@ -205,7 +208,7 @@ const About_us = () => {
           >
             <h3 className="vertical-timeline-title">Upcoming Contests</h3>
             <p>
-              Our upcoming contests include:
+              Planned contests include:
               <ul>
                 <li>Anti-Smoking Awareness Contest</li>
                 <li>STEM Competitions</li>

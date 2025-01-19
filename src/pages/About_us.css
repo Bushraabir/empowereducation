@@ -1,12 +1,11 @@
-/* Importing Retro Font */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 /* Global Styles */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Press Start 2P', cursive;
+    scroll-behavior: smooth;
 }
 
 html,
@@ -17,7 +16,13 @@ body {
     overflow-x: hidden;
 }
 
+body {
+    line-height: 1.6;
+}
+
+
 /* Hero Section */
+
 .hero {
     position: relative;
     height: 100vh;
@@ -28,37 +33,41 @@ body {
     text-align: center;
     background: radial-gradient(circle, #001b44 30%, #090a30 100%);
     overflow: hidden;
+    padding: 20px;
 }
 
 .hero-content {
     z-index: 2;
     position: relative;
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
 }
 
 .hero-heading {
-    font-size: 4rem;
+    font-size: 3rem;
     color: #00fff7;
-    text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 30px #00fff7;
+    text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
     margin-bottom: 20px;
 }
 
 .hero-subheading {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: #ff00ff;
     text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
     margin-bottom: 40px;
 }
 
 .cta-btn {
-    padding: 15px 40px;
-    font-size: 1.2rem;
+    padding: 12px 30px;
+    font-size: 1rem;
     background-color: #8900f2;
     color: white;
     border: none;
-    border-radius: 30px;
+    border-radius: 25px;
     box-shadow: 0 0 10px #8900f2, 0 0 20px #8900f2;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
 }
 
 .cta-btn:hover {
@@ -70,7 +79,9 @@ body {
     transform: scale(0.95);
 }
 
+
 /* Parallax Background */
+
 .parallax-background {
     position: absolute;
     top: 0;
@@ -88,12 +99,15 @@ body {
     height: 100%;
     object-fit: cover;
     transform: translate(-50%, -50%);
-    opacity: 0.1;
+    opacity: 0.2;
+    filter: blur(2px);
 }
 
+
 /* Section Styles */
+
 .section {
-    padding: 80px 20px;
+    padding: 60px 20px;
     text-align: center;
 }
 
@@ -102,31 +116,34 @@ body {
 }
 
 .subheading {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #00e6ff;
     margin-bottom: 20px;
     text-shadow: 0 0 10px #00e6ff, 0 0 20px #00e6ff;
 }
 
 .section-text {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #d9d9d9;
-    line-height: 1.6;
+    line-height: 1.8;
     margin-bottom: 40px;
 }
 
+
+/* Timeline Section */
+
 .timeline-section {
     background: linear-gradient(135deg, #0a002b, #001022);
+    padding-top: 80px;
 }
 
-/* Timeline Styles */
 .vertical-timeline-element {
     background: #1a0037;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 30px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .vertical-timeline-element:hover {
@@ -135,39 +152,44 @@ body {
 }
 
 .vertical-timeline-title {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: #00fff7;
     margin-bottom: 10px;
-}
-
-.vertical-timeline-date {
-    font-size: 1rem;
-    color: #ff00ff;
 }
 
 .vertical-timeline-element ul {
     list-style-type: square;
     padding-left: 20px;
     color: #d9d9d9;
+    text-align: left;
 }
 
 .vertical-timeline-element ul li {
     margin-bottom: 5px;
 }
 
-.vertical-timeline-element-icon {
-    font-size: 2.5rem;
-    color: #fff;
-    background-color: #ff6347;
-    border-radius: 50%;
-    padding: 10px;
+
+/* Lottie Animation Section */
+
+.animation-section {
+    background: #0a002b;
+    padding: 60px 20px;
 }
 
-.vertical-timeline-element-icon:hover {
-    background-color: #ff007a;
+.lottie-animation {
+    max-width: 400px;
+    margin: 0 auto 20px;
 }
+
+.animation-text {
+    font-size: 1.2rem;
+    color: #d9d9d9;
+    margin-top: 20px;
+}
+
 
 /* Responsive Design */
+
 @media (max-width: 768px) {
     .hero-heading {
         font-size: 2.5rem;
@@ -177,7 +199,7 @@ body {
         padding: 12px 24px;
     }
     .subheading {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     .section-text {
         font-size: 1rem;
@@ -186,10 +208,7 @@ body {
         padding: 15px;
     }
     .vertical-timeline-title {
-        font-size: 1.4rem;
-    }
-    .vertical-timeline-date {
-        font-size: 0.9rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -202,7 +221,7 @@ body {
         padding: 10px 20px;
     }
     .subheading {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
     .section-text {
         font-size: 0.9rem;
@@ -211,6 +230,6 @@ body {
         padding: 10px;
     }
     .vertical-timeline-title {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 }
