@@ -228,6 +228,7 @@
     }
     .logo {
         width: 120px;
+        /* Resize logo for medium screens */
     }
     .overlay {
         padding: 10px;
@@ -252,7 +253,8 @@
         font-size: 0.9rem;
     }
     .logo {
-        width: 100px;
+        margin-top: 70px;
+        /* Resize logo for smaller screens */
     }
     .overlay {
         padding: 5px;

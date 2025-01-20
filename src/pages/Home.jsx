@@ -42,7 +42,7 @@ const Home = () => {
   };
 
   return (
-    <div className="home-container">
+    <div className="mt-35 home-container">
       {/* Video Background */}
       <div>
         <div className="h-fit background-overlay">
