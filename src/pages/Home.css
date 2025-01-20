@@ -89,12 +89,14 @@
 /* Hero Section */
 
 .hero-title {
-    font-size: 2.5rem;
+    font-size: 6.5rem;
     font-weight: bold;
     margin-bottom: 15px;
-    color: rgb(134, 167, 136);
-    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: whitesmoke;
     animation: fadeInUp 2s ease-in-out;
+    margin-top: -130px;
 }
 
 .hero-subtitle {
@@ -225,7 +227,8 @@
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 1.5rem;
+        margin-top: -95px;
+        font-size: 3rem;
     }
     .hero-subtitle {
         font-size: 0.9rem;

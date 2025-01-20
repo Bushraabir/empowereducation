@@ -15,24 +15,13 @@ const Navbar = () => {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 z-50 flex items-center justify-between w-full p-5 navbar glass-effect"
+      className="fixed top-0 left-0 z-50 flex items-center justify-between w-full p-5 navbar"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      {/* Logo */}
-      <motion.div
-        className="flex items-center justify-center w-40 h-12 font-extrabold rounded-lg logo-glass"
-        whileHover={{ scale: 1.1, rotate: 5 }}
-        whileTap={{ scale: 0.95 }}
-        transition={{ type: "spring", stiffness: 300 }}
-      >
-        <p className="text-transparent bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text">
-          EmpowerEd
-        </p>
-      </motion.div>
 
-      {/* Hamburger Menu */}
+      {/* Hamburger Menu Icon */}
       <motion.div
         className="block cursor-pointer md:hidden"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -56,11 +45,11 @@ const Navbar = () => {
         ></div>
       </motion.div>
 
-      {/* Mobile Dropdown Menu with Glassmorphism */}
+      {/* Mobile Dropdown Menu (No Glassmorphism) */}
       <motion.div
         className={`absolute top-0 left-0 right-0 md:hidden flex flex-col items-center gap-5 w-full bg-white shadow-lg ${
           isMenuOpen ? "block" : "hidden"
-        } glass-dropdown`}
+        }`}
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: isMenuOpen ? 1 : 0, y: isMenuOpen ? 0 : -50 }}
         exit={{ opacity: 0, y: -50 }}
@@ -175,4 +164,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
