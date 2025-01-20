@@ -8,6 +8,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 80px;
+    transition: background 0.3s ease-in-out;
 }
 
 .contact-container {
@@ -17,6 +19,7 @@ body {
     min-height: 100vh;
     padding: 20px;
     background: linear-gradient(to bottom right, #F0E6EF, #E2F3F5);
+    transition: background 0.3s ease-in-out;
 }
 
 .contact-card {
@@ -27,6 +30,13 @@ body {
     padding: 20px;
     width: 100%;
     max-width: 500px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.contact-card:hover {
+    transform: scale(1.02);
 }
 
 .contact-card h1 {
@@ -35,6 +45,11 @@ body {
     text-align: center;
     margin-bottom: 15px;
     color: #5B5B7E;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-card:hover h1 {
+    color: #8C92A3;
 }
 
 .contact-card p {
@@ -53,12 +68,13 @@ body {
     background: rgba(226, 243, 245, 0.7);
     color: #333;
     outline: none;
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .contact-input:focus,
 .contact-textarea:focus {
     box-shadow: 0 0 5px 2px #A5C4C9;
+    transform: scale(1.02);
 }
 
 .contact-textarea {
@@ -90,4 +106,80 @@ body {
     margin-top: 10px;
     font-size: 0.9rem;
     color: #5B5B7E;
+}
+
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 1024px) {
+    body {
+        padding-top: 180px;
+        /* Ensure space is maintained across devices */
+    }
+    .contact-card {
+        max-width: 450px;
+    }
+    .contact-card h1 {
+        font-size: 1.8rem;
+    }
+    .contact-input,
+    .contact-textarea {
+        font-size: 0.95rem;
+        padding: 8px 12px;
+    }
+    .contact-button {
+        font-size: 1.1rem;
+        padding: 8px 18px;
+    }
+    .contact-status {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 180px;
+        /* Keep 80px margin on top to prevent content overlap with navbar */
+    }
+    .contact-card {
+        max-width: 400px;
+        padding: 15px;
+    }
+    .contact-card h1 {
+        font-size: 1.7rem;
+    }
+    .contact-input,
+    .contact-textarea {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+    .contact-button {
+        font-size: 1.1rem;
+        padding: 8px 18px;
+    }
+    .contact-status {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-card {
+        margin-top: 120px;
+        padding: 52px;
+    }
+    .contact-card h1 {
+        font-size: 1.6rem;
+    }
+    .contact-input,
+    .contact-textarea {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+    .contact-button {
+        font-size: 1rem;
+        padding: 6px 14px;
+    }
+    .contact-status {
+        font-size: 0.8rem;
+    }
 }

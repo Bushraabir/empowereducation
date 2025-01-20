@@ -52,7 +52,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="mt-25 flex items-center justify-center min-h-screen contact-container bg-gradient-to-br from-[#F0E6EF] to-[#E2F3F5]">
+    <div className=" flex items-center justify-center min-h-screen contact-container bg-gradient-to-br from-[#F0E6EF] to-[#E2F3F5]">
       <motion.div
         className="flex flex-col items-center w-full max-w-5xl p-8 space-y-8 rounded-lg shadow-xl lg:flex-row lg:space-x-8 lg:space-y-0 contact-card bg-white/30 backdrop-blur-lg"
         initial={{ opacity: 0, scale: 0.8 }}
@@ -61,7 +61,7 @@ const Contact = () => {
       >
         {/* Left section with form */}
         <div className="w-full max-w-md space-y-6">
-          <h1 className="text-3xl font-bold text-center text-[#5B5B7E]">
+          <h1 className="mt-26 text-3xl font-bold text-center text-[#5B5B7E]">
             Connect with <span className="text-[#5B5B7E]">EmpowerEd</span>
           </h1>
           <p className="text-center text-[#5B5B7E]">
