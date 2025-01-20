@@ -7,6 +7,23 @@
     background-color: #FFFDEC;
 }
 
+
+/* Logo Styling */
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+    /* Adjust spacing as needed */
+}
+
+.logo {
+    width: 350px;
+    /* Adjust size of the logo */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 .loader {
     display: flex;
     justify-content: space-between;

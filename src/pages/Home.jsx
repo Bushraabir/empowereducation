@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Typical from "react-typical";
 import "./Home.css";
 import videoSrc from "../assets/home1.mp4";
-import logoSrc from "../assets/logo.jpg";
+import logoSrc from "../assets/logo.png";
 import musicSrc from "../assets/sakura.mp3";
 import { MdMusicNote, MdPauseCircleFilled } from "react-icons/md";  // Using Material-UI icons
 

@@ -80,21 +80,9 @@
 
 /* Logo Section */
 
-.logo-container {
-    margin-bottom: 30px;
-}
-
 .logo {
-    width: 150px;
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 0 8px 30px rgba(255, 207, 207, 0.4);
-    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-}
-
-.logo:hover {
-    transform: scale(1.15);
-    box-shadow: 0 12px 40px rgba(255, 207, 207, 0.7);
+    margin-top: 280px;
+    transition: transform 0.4s ease-in-out, box-shadow 5s ease-in-out;
 }
 
 

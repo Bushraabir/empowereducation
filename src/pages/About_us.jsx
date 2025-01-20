@@ -7,7 +7,7 @@ import Lottie from 'lottie-react';
 
 import educationAnimation from '../assets/education.json'; // Example Lottie animation
 import videoSrc from '../assets/home.mp4';
-import teamImage from '../assets/logo.jpg';
+import teamImage from '../assets/team.png';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { FaGamepad, FaRocket, FaTrophy, FaGraduationCap, FaTree, FaGlobe } from 'react-icons/fa';
 import 'react-vertical-timeline-component/style.min.css';

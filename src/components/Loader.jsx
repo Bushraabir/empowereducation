@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import './Loader.css';
+import logo from '../assets/logo.png'; // Import the logo image
 
 const Loader = () => {
   useEffect(() => {
@@ -30,6 +31,22 @@ const Loader = () => {
 
   return (
     <div className="loader-container">
+      {/* Logo with rotation animation */}
+      <motion.div
+        className="logo-container"
+        animate={{
+          rotate: [0, 360], // Rotating from 0 to 360 degrees
+        }}
+        transition={{
+          repeat: Infinity, // Infinite loop
+          repeatType: 'loop', // Looping animation
+          duration: 5, // Adjust the speed of the rotation
+          ease: 'linear', // Smooth rotation without easing
+        }}
+      >
+        <img src={logo} alt="Logo" className="logo" />
+      </motion.div>
+      
       <motion.div
         className="loader"
         initial={{ opacity: 0 }}
