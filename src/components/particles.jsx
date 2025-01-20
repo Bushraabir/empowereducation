@@ -1,84 +1,84 @@
 import React from 'react';
-import { loadFull } from 'tsparticles'; // Required for advanced configuration
+import { loadFull } from 'tsparticles';
 import Particles from 'react-tsparticles';
 
 const ParticleBackground = () => {
   const particlesInit = async (main) => {
-    // Load tsparticles full package
     await loadFull(main);
   };
 
   const particlesOptions = {
     fullScreen: {
-      enable: true, // Ensures particles cover the full viewport
-      zIndex: -1, // Keeps particles behind all elements
+      enable: true,
+      zIndex: -1,
     },
     particles: {
       number: {
-        value: 120, // Slightly fewer particles for better performance
+        value: 400, 
         density: {
           enable: true,
-          value_area: 800, // Particles' area density
+          value_area: 800,
         },
       },
       color: {
-        value: "#7afcff", // Soft neon blue for the particles
+        value: "#86A788", // Soft muted green for a natural feel
       },
       shape: {
-        type: "circle", // Simple circular particles
+        type: "circle",
       },
       opacity: {
-        value: 0.6, // Base opacity of particles
+        value: 0.7,
         anim: {
           enable: true,
-          speed: 2,
-          opacity_min: 0.1, // Minimum opacity during animation
+          speed: 1,
+          opacity_min: 0.4,
         },
       },
       size: {
-        value: 3, // Base size of particles
-        random: true, // Randomize sizes
+        value: 4,
+        random: true,
         anim: {
           enable: true,
-          speed: 4,
-          size_min: 0.5, // Minimum size during animation
+          speed: 5,
+          size_min: 2,
         },
       },
       move: {
         enable: true,
-        speed: 2, // Particle movement speed
-        direction: "none", // No specific direction
-        random: true, // Enable random movement
-        straight: false, // Disable straight-line motion
-        out_mode: "out", // Particles move out of bounds
-        bounce: false, // Disable bouncing
+        speed: 2,
+        direction: "none",
+        random: true,
+        straight: false,
+        out_mode: "out",
+        bounce: false,
       },
     },
     interactivity: {
       events: {
         onhover: {
           enable: true,
-          mode: "repulse", // Particles repel when hovered
+          mode: "repulse",
         },
         onclick: {
           enable: true,
-          mode: "bubble", // Create a "bubble" effect on click
+          mode: "bubble",
         },
       },
       modes: {
         repulse: {
-          distance: 150, // Distance for repulsion effect
-          duration: 0.4,
+          distance: 220, // More subtle repulsion
+          duration: 0.8, // Slower and more natural motion
+          easing: "ease-out", // Smooth ease-out effect
         },
         bubble: {
-          distance: 200,
-          size: 6,
-          duration: 0.3,
+          distance: 220,
+          size: 12, // Slightly larger bubble effect
+          duration: 0.4,
           opacity: 0.8,
         },
       },
     },
-    detectRetina: true, // Enable retina detection
+    detectRetina: true,
   };
 
   return <Particles id="particles-js" init={particlesInit} options={particlesOptions} />;

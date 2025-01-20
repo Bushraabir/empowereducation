@@ -1,103 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom right, #a988ff, #ffb6e9); /* Softer pastel gradient */
-  color: white;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(to bottom right, #86A788, #FFFDEC);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 20px;
-  background: linear-gradient(to bottom right, #a988ff, #ffb6e9); /* Matching body gradient */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(to bottom right, #86A788, #FFFDEC);
 }
 
 .contact-card {
-  background: rgba(255, 255, 255, 0.2); /* Slightly more transparent for dreamy effect */
-  backdrop-filter: blur(12px);
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  width: 100%;
-  max-width: 500px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
 }
 
 .contact-card h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 15px;
-  color: #ffffff; /* White text */
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Soft glow */
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #FFE2E2;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 .contact-card .highlight {
-  color: #ffde85; /* Subtle pastel yellow highlight */
+    color: #FFB6E9;
 }
 
 .contact-card p {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #ffffff; /* White text for consistency */
+    text-align: center;
+    margin-bottom: 20px;
+    color: #FFE2E2;
 }
 
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .contact-input,
 .contact-textarea {
-  width: 100%;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  background: rgba(255, 255, 255, 0.7);
-  color: #333;
-  outline: none;
-  transition: box-shadow 0.3s ease-in-out;
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    color: #333;
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 .contact-input:focus,
 .contact-textarea:focus {
-  box-shadow: 0 0 5px 2px #ffb6e9; /* Soft pastel pink focus glow */
+    box-shadow: 0 0 5px 2px #FFB6E9;
 }
 
 .contact-textarea {
-  resize: none;
+    resize: none;
 }
 
 .contact-button {
-  background: #ffde85; /* Pastel yellow button */
-  color: #333;
-  font-weight: bold;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    background: #FFE2E2;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .contact-button:hover {
-  transform: scale(1.05);
-  background: #ffe5a8; /* Slightly lighter yellow on hover */
+    transform: scale(1.05);
+    background: #FFCFCF;
 }
 
 .contact-button:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
 }
 
 .contact-status {
-  text-align: center;
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: #ffe5f0; /* Soft pink for status messages */
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #FFB6E9;
 }

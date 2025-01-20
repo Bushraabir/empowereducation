@@ -1,3 +1,7 @@
+/* Import Google Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
+
 /* Main Container */
 
 .home-container {
@@ -5,30 +9,39 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    background: rgb(255, 253, 236);
+    color: rgb(134, 167, 136);
 }
 
-.video-background {
+
+/* Gradient Overlay */
+
+.gradient-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    z-index: -1;
-    /* Ensures it stays in the background */
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
 }
 
-.background-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Ensures the video covers the entire background */
-}
 
-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/* Music Control Icon */
+
+.music-control-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
 }
 
 
@@ -36,121 +49,156 @@ video {
 
 .overlay {
     position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     width: 100%;
     height: 100%;
-    color: #ffffff;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    /* Transparent overlay */
+    background: linear-gradient(135deg, rgba(134, 167, 136, 0.1), rgba(134, 167, 136, 0.8)), radial-gradient(circle at top left, rgba(255, 207, 207, 0.1), transparent 60%);
+    backdrop-filter: saturate(250%);
+    padding: 20px;
+    overflow: hidden;
 }
 
 
-/* Logo */
+/* Logo Section */
 
 .logo-container {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .logo {
-    width: 150px;
+    width: 180px;
     height: auto;
     border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 30px rgba(255, 207, 207, 0.4);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.15);
+    box-shadow: 0 12px 40px rgba(255, 207, 207, 0.7);
 }
 
 
 /* Hero Section */
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: bold;
-    margin-bottom: 10px;
-    animation: fadeIn 2s ease-in-out;
+    margin-bottom: 15px;
+    color: rgb(134, 167, 136);
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 2s ease-in-out;
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 4.5rem;
+    }
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
-    margin-bottom: 20px;
-    animation: fadeIn 2.5s ease-in-out;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    color: rgb(255, 226, 226);
+    text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 2.5s ease-in-out;
+}
+
+@media (min-width: 768px) {
+    .hero-subtitle {
+        font-size: 2rem;
+    }
+}
+
+
+/* Typing Animation */
+
+.typing-animation {
+    display: inline-block;
+    font-weight: bold;
+    color: rgb(255, 207, 207);
 }
 
 
 /* Call-to-Action Button */
 
 .cta-button {
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    background-color: #ff6347;
-    color: #ffffff;
+    font-size: 1.3rem;
+    padding: 14px 30px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgb(255, 226, 226), rgb(255, 207, 207));
+    color: rgb(134, 167, 136);
     cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 8px 20px rgba(255, 207, 207, 0.5);
 }
 
 .cta-button:hover {
-    transform: scale(1.1);
-    background-color: #ff4500;
-    box-shadow: 0 4px 10px rgba(255, 69, 0, 0.5);
+    transform: scale(1.2);
+    background: linear-gradient(90deg, rgb(255, 207, 207), rgb(255, 226, 226));
+    box-shadow: 0px 10px 30px rgba(255, 207, 207, 0.8);
 }
 
-
-/* Scroll Indicator */
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #ffffff;
+.cta-button:focus {
+    outline: none;
+    box-shadow: 0 0 20px rgba(255, 207, 207, 0.9);
 }
 
-.scroll-indicator p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    animation: fadeInUp 2s ease-in-out;
-}
-
-.scroll-icon {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ffffff;
-    border-radius: 50%;
-    animation: bounce 2s infinite;
-}
-
-
-/* Keyframes */
-
-@keyframes bounce {
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
+@media (min-width: 768px) {
+    .cta-button {
+        font-size: 1.7rem;
     }
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+.cta-title {
+    font-size: 1.5rem;
+    color: #86A788;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), /* Subtle shadow for readability */
+    0 0 10px rgba(134, 167, 136, 0.8);
+    /* Glowing soft green shadow */
 }
+
+.cta-description {
+    font-size: 1.2rem;
+    color: rgb(255, 253, 236);
+    line-height: 1.6;
+    text-shadow: 2px 2px 4px rgba(134, 167, 136, 0.5), /* Soft shadow for a clean effect */
+    0 0 10px rgba(134, 167, 136, 0.8), /* Glowing effect around text */
+    0 0 15px rgb(134, 167, 136, .8);
+}
+
+
+/* Secondary Button */
+
+.cta-secondary-button {
+    background-color: rgb(134, 167, 136);
+    color: rgb(255, 253, 236);
+    border: none;
+    border-radius: .15px;
+    padding: 12px 28px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0px 8px 20px rgba(134, 167, 136, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.cta-secondary-button:hover {
+    background-color: rgba(134, 167, 136, 0.8);
+    box-shadow: 0px 10px 30px rgba(134, 167, 136, 0.7);
+}
+
+
+/* Animations */
 
 @keyframes fadeInUp {
     0% {

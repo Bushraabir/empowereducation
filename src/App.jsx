@@ -4,14 +4,8 @@ import Navbar from "./components/Navbar";
 import { About_us, Home, Features, Contact } from "./pages";
 import { Canvas } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
+import Loader from './components/Loader';
 
-const Loader = () => (
-  <Canvas>
-    <Html center>
-      <div>Loading...</div>
-    </Html>
-  </Canvas>
-);
 
 
 const App = () => {

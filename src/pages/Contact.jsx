@@ -40,17 +40,17 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen contact-container bg-gradient-to-br from-purple-600 to-pink-500">
+    <div className="flex items-center justify-center min-h-screen contact-container bg-gradient-to-br from-[#86A788] to-[#FFFDEC]">
       <motion.div
         className="w-full max-w-lg p-8 rounded-lg shadow-xl contact-card bg-white/30 backdrop-blur-lg"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        <h1 className="mb-4 text-3xl font-bold text-center text-white">
-          Connect with <span className="text-yellow-300">EmpowerEd</span>
+        <h1 className="mb-4 text-3xl font-bold text-center text-[#FFE2E2]">
+          Connect with <span className="text-[#FFE2E2]">EmpowerEd</span>
         </h1>
-        <p className="mb-6 text-center text-white">
+        <p className="mb-6 text-center text-[#FFE2E2]">
           Have a question or idea? We'd love to hear from you! Drop us a message.
         </p>
 
@@ -66,7 +66,7 @@ const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               placeholder="Your Email"
-              className="w-full p-3 text-gray-800 rounded-lg outline-none bg-white/70 focus:ring-2 focus:ring-yellow-300"
+              className="w-full p-3 text-[#333] rounded-lg outline-none bg-[#FFFDEC]/70 focus:ring-2 focus:ring-[#FFE2E2]"
               required
             />
           </motion.div>
@@ -80,21 +80,21 @@ const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               placeholder="Your Message"
-              className="w-full p-3 text-gray-800 rounded-lg outline-none bg-white/70 focus:ring-2 focus:ring-yellow-300"
+              className="w-full p-3 text-[#333] rounded-lg outline-none bg-[#FFFDEC]/70 focus:ring-2 focus:ring-[#FFE2E2]"
               rows="5"
               required
             ></textarea>
           </motion.div>
           <motion.button
             type="submit"
-            className="w-full py-3 font-bold text-gray-800 bg-yellow-300 rounded-lg shadow-md hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            className="w-full py-3 font-bold text-[#333] bg-[#FFE2E2] rounded-lg shadow-md hover:bg-[#FFCFCF] focus:outline-none focus:ring-2 focus:ring-[#FFCFCF]"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Send Message
           </motion.button>
         </form>
-        <p className="mt-4 text-center text-white">{status}</p>
+        <p className="mt-4 text-center text-[#FFE2E2]">{status}</p>
       </motion.div>
     </div>
   );
