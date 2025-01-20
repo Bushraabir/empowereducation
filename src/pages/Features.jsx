@@ -45,7 +45,7 @@ const Features = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <h1>Fueling Creativity, Sparking Change</h1>
-        <p>Welcome to Empowered Ed, where ideas ignite innovation and possibilities know no bounds. Our features are more than just tools—they're pathways to creativity, growth, and transformation. Whether you're here to explore, learn, or create, every resource and collaboration is designed to empower you to dream bigger and achieve more. Dive in and discover how we're shaping a future driven by passion and purpose.</p>
+        <p>Welcome to EmpowerEd, a platform where ideas inspire innovation and possibilities are limitless. Here, our features are not just tools—they're gateways to creativity, growth, and meaningful transformation. Whether you're exploring, learning, or creating, every resource is crafted to empower you to dream bigger and achieve your goals. Join us and discover how we're building a future driven by passion and purpose.</p>
       </motion.div>
 
       {/* Timeline for Features */}

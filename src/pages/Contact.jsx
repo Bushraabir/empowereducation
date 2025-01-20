@@ -65,7 +65,11 @@ const Contact = () => {
             Connect with <span className="text-[#5B5B7E]">EmpowerEd</span>
           </h1>
           <p className="text-center text-[#5B5B7E]">
-            Have a question or idea? We'd love to hear from you! Drop us a message.
+          Want to join our team!<br/>
+
+          Have questions or ideas to share? -We’d love to hear from you ^_^
+          
+          
           </p>
 
           <form className="space-y-4" onSubmit={handleSubmit}>
