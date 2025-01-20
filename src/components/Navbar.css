@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    background: linear-gradient(to bottom right, #f0e6ef, #e2f3f5);
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    font-family: "Playfair Display", serif;
+    z-index: 1000;
+}
+
+.nav-item {
+    position: relative;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #008080;
+    transform: translateY(-2px);
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.logo-glass {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    padding: 10px 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.logo-glass:hover {
+    transform: scale(1.1);
+}
+
+.hover-effect::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #14b8a6;
+    transition: width 0.3s ease-in-out;
+}
+
+.hover-effect:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .nav-item {
+        margin-bottom: 15px;
+        color: #110d0d;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .dropdown-menu {
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(20px);
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .dropdown-menu.open {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .dropdown-btn {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px);
+        border-radius: 8px;
+        padding: 10px;
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .dropdown-btn:hover {
+        transform: scale(1.05);
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(12px);
+    }
+    .navbar .absolute.top-2.right-2 {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+    .glass-dropdown {
+        background: rgba(226, 161, 161, 0.2);
+        backdrop-filter: blur(15px);
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(175, 98, 98, 0.1);
+    }
+    .nav-item {
+        color: #333333;
+    }
+}

@@ -8,6 +8,7 @@
     position: relative;
     width: 100%;
     height: 100vh;
+    /* Full viewport height */
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -15,6 +16,21 @@
     font-family: 'Playfair Display', serif;
     background: rgb(255, 253, 236);
     color: rgb(134, 167, 136);
+}
+
+
+/* Full-Screen Video Overlay */
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Behind the content */
+    object-fit: cover;
+    /* Ensures video covers the entire screen */
 }
 
 
@@ -27,7 +43,9 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.1);
-    z-index: 1;
+    z-index: 0;
+    /* Just above the video */
+    object-fit: fill;
 }
 
 
@@ -50,6 +68,7 @@
 .overlay {
     position: relative;
     z-index: 2;
+    /* Above the gradient */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,7 +90,7 @@
 }
 
 .logo {
-    width: 180px;
+    width: 150px;
     height: auto;
     border-radius: 50%;
     box-shadow: 0 8px 30px rgba(255, 207, 207, 0.4);
@@ -87,7 +106,7 @@
 /* Hero Section */
 
 .hero-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 15px;
     color: rgb(134, 167, 136);
@@ -95,29 +114,14 @@
     animation: fadeInUp 2s ease-in-out;
 }
 
-@media (min-width: 768px) {
-    .hero-title {
-        font-size: 4.5rem;
-    }
-}
-
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 25px;
     line-height: 1.6;
     color: rgb(255, 226, 226);
     text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.2);
     animation: fadeInUp 2.5s ease-in-out;
 }
-
-@media (min-width: 768px) {
-    .hero-subtitle {
-        font-size: 2rem;
-    }
-}
-
-
-/* Typing Animation */
 
 .typing-animation {
     display: inline-block;
@@ -151,11 +155,8 @@
     box-shadow: 0 0 20px rgba(255, 207, 207, 0.9);
 }
 
-@media (min-width: 768px) {
-    .cta-button {
-        font-size: 1.7rem;
-    }
-}
+
+/* Call-to-Action Title */
 
 .cta-title {
     font-size: 1.5rem;
@@ -163,18 +164,17 @@
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), /* Subtle shadow for readability */
-    0 0 10px rgba(134, 167, 136, 0.8);
-    /* Glowing soft green shadow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(134, 167, 136, 0.8);
 }
+
+
+/* Call-to-Action Description */
 
 .cta-description {
     font-size: 1.2rem;
     color: rgb(255, 253, 236);
     line-height: 1.6;
-    text-shadow: 2px 2px 4px rgba(134, 167, 136, 0.5), /* Soft shadow for a clean effect */
-    0 0 10px rgba(134, 167, 136, 0.8), /* Glowing effect around text */
-    0 0 15px rgb(134, 167, 136, .8);
+    text-shadow: 2px 2px 4px rgba(134, 167, 136, 0.5), 0 0 10px rgba(134, 167, 136, 0.8), 0 0 15px rgb(134, 167, 136, .8);
 }
 
 

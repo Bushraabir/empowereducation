@@ -2,8 +2,8 @@
 body {
     margin: 0;
     font-family: 'Playfair Display', serif;
-    background: linear-gradient(to bottom right, #86A788, #FFFDEC);
-    color: white;
+    background: linear-gradient(to bottom right, #F0E6EF, #E2F3F5);
+    color: #333;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -16,14 +16,14 @@ body {
     justify-content: center;
     min-height: 100vh;
     padding: 20px;
-    background: linear-gradient(to bottom right, #86A788, #FFFDEC);
+    background: linear-gradient(to bottom right, #F0E6EF, #E2F3F5);
 }
 
 .contact-card {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 100%;
     max-width: 500px;
@@ -34,24 +34,13 @@ body {
     font-weight: bold;
     text-align: center;
     margin-bottom: 15px;
-    color: #FFE2E2;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-}
-
-.contact-card .highlight {
-    color: #FFB6E9;
+    color: #5B5B7E;
 }
 
 .contact-card p {
     text-align: center;
     margin-bottom: 20px;
-    color: #FFE2E2;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    color: #5B5B7E;
 }
 
 .contact-input,
@@ -61,7 +50,7 @@ body {
     border: none;
     border-radius: 8px;
     font-size: 1rem;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(226, 243, 245, 0.7);
     color: #333;
     outline: none;
     transition: box-shadow 0.3s ease-in-out;
@@ -69,7 +58,7 @@ body {
 
 .contact-input:focus,
 .contact-textarea:focus {
-    box-shadow: 0 0 5px 2px #FFB6E9;
+    box-shadow: 0 0 5px 2px #A5C4C9;
 }
 
 .contact-textarea {
@@ -77,7 +66,7 @@ body {
 }
 
 .contact-button {
-    background: #FFE2E2;
+    background: #A5C4C9;
     color: #333;
     font-weight: bold;
     padding: 10px 20px;
@@ -89,7 +78,7 @@ body {
 
 .contact-button:hover {
     transform: scale(1.05);
-    background: #FFCFCF;
+    background: #89B3BA;
 }
 
 .contact-button:active {
@@ -100,5 +89,5 @@ body {
     text-align: center;
     margin-top: 10px;
     font-size: 0.9rem;
-    color: #FFB6E9;
+    color: #5B5B7E;
 }

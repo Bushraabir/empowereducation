@@ -45,7 +45,7 @@ const Home = () => {
     <div className="home-container">
       {/* Video Background */}
       <div>
-        <div className="background-overlay">
+        <div className="h-fit background-overlay">
           <video autoPlay loop muted className="background-video">
             <source src={videoSrc} type="video/mp4" />
             Your browser does not support the video tag.

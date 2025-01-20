@@ -38,7 +38,7 @@
 }
 
 .hero-heading {
-    font-size: 8rem;
+    font-size: 10rem;
     font-weight: 900;
     color: #86A788;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(134, 167, 136, 0.8);
@@ -51,7 +51,7 @@
 }
 
 .hero-subheading {
-    font-size: 2.25rem;
+    font-size: 1.25rem;
     color: #FFCFCF;
     text-shadow: 0 0 1px #FFCFCF, 0 0 2px #FFCFCF;
     margin-bottom: 40px;
@@ -102,6 +102,79 @@
     filter: blur(.5px);
 }
 
+.subheading-journey {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #86A788;
+    position: relative;
+    margin: 30px 0;
+    background: linear-gradient(45deg, #86A788, #FFCFCF);
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.subheading-journey::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #FFE2E2, #FFFDEC);
+    z-index: -1;
+    border-radius: 8px;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.subheading-journey:hover {
+    color: #FFFDEC;
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+}
+
+.subheading-journey:hover::before {
+    opacity: 0.6;
+}
+
+.subheading-journey span {
+    font-size: 1.2rem;
+    color: rgb(255, 207, 207);
+    display: block;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.5s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.subheading-journey::after {
+    content: "Our Journey";
+    font-size: 2.5rem;
+    color: rgb(134, 167, 136);
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    opacity: 0.1;
+}
+
+.subheading-journey:active {
+    transform: scale(0.98);
+}
+
 
 /* Mission Section */
 
@@ -127,11 +200,11 @@
 }
 
 .subheading {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     font-weight: 700;
     color: #86A788;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     letter-spacing: 1px;
 }
 
@@ -278,59 +351,5 @@
     }
     .vertical-timeline-title {
         font-size: 1.1rem;
-    }
-}
-
-.subheading-journey {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #86A788;
-    text-align: center;
-    position: relative;
-    margin-bottom: 40px;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    /* Start with no opacity */
-    animation: fadeIn 1.5s ease-out forwards;
-    /* Animation for fade-in */
-}
-
-.subheading-journey::before {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    /* Start with width 0 for animation */
-    height: 3px;
-    background: #FFE2E2;
-    border-radius: 8px;
-    transition: width 0.5s ease-in-out;
-    /* Smooth transition for width */
-}
-
-.subheading-journey:hover {
-    color: #FFCFCF;
-    text-shadow: 2px 2px 15px rgba(255, 207, 207, 0.6);
-}
-
-.subheading-journey:hover::before {
-    width: 50px;
-    /* On hover, the underline expands */
-}
-
-
-/* Keyframes for fade-in effect */
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
     }
 }

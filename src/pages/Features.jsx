@@ -1,17 +1,37 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaTrophy, FaBookOpen, FaMoneyBillWave, FaPlaneDeparture, FaUsers, FaHandshake, FaMapMarkedAlt, FaGamepad } from 'react-icons/fa';
+import Lottie from 'react-lottie'; // Import Lottie
 import ParticleBackground from '../components/particles.jsx';
 import './Features.css';
 
-// Improved animation for timeline's milestones
+// Import Lottie JSON animations
+import studentHubAnimation from '../assets/studenthub.json';
+import mentalHealthAnimation from '../assets/mentalHealth.json'; // You can replace with your own
+import fundingAnimation from '../assets/funding.json'; // Replace with your own
+import visaAnimation from '../assets/visa.json'; // Replace with your own
+import competitionAnimation from '../assets/competition.json'; // Replace with your own
+import scholarshipsAnimation from '../assets/scholarships.json'; // Replace with your own
+import globalNetworkAnimation from '../assets/globalNetwork.json'; // Replace with your own
+import successStoriesAnimation from '../assets/successStories.json'; // Replace with your own
+
+// Enhanced animation for timeline's milestones
 const fadeIn = {
-  initial: { opacity: 0, scale: 0.95, y: 40 },
+  initial: { opacity: 0, scale: 0.9, y: 40 },
   animate: { opacity: 1, scale: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
-  hover: { scale: 1.05, y: -8, transition: { duration: 0.3, ease: "easeInOut" } },
+  hover: { scale: 1.1, y: -10, transition: { duration: 0.4, ease: "easeInOut" } },
 };
 
 const Features = () => {
+  // Lottie options
+  const lottieOptions = (animationData) => ({
+    loop: true,
+    autoplay: true, // Animation will play automatically
+    animationData: animationData, 
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  });
+
   return (
     <div className="mt-20 empowered-features-container">
       {/* Particles Background */}
@@ -24,8 +44,8 @@ const Features = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
-        <h1>Global Collaboration</h1>
-        <p>Bringing students worldwide together to share knowledge, innovate, and solve real-world problems through events and collaboration.</p>
+        <h1>Fueling Creativity, Sparking Change</h1>
+        <p>Welcome to Empowered Ed, where ideas ignite innovation and possibilities know no bounds. Our features are more than just tools—they're pathways to creativity, growth, and transformation. Whether you're here to explore, learn, or create, every resource and collaboration is designed to empower you to dream bigger and achieve more. Dive in and discover how we're shaping a future driven by passion and purpose.</p>
       </motion.div>
 
       {/* Timeline for Features */}
@@ -38,7 +58,7 @@ const Features = () => {
           whileHover="hover"
         >
           <div className="timeline-badge">
-            <FaBookOpen />
+            <Lottie options={lottieOptions(studentHubAnimation)} height={100} width={100} />
           </div>
           <div className="timeline-content">
             <h2>Student Hub</h2>
@@ -54,7 +74,7 @@ const Features = () => {
           whileHover="hover"
         >
           <div className="timeline-badge">
-            <FaTrophy />
+            <Lottie options={lottieOptions(mentalHealthAnimation)} height={100} width={100} />
           </div>
           <div className="timeline-content">
             <h2>Mental Health Support</h2>
@@ -70,7 +90,7 @@ const Features = () => {
           whileHover="hover"
         >
           <div className="timeline-badge">
-            <FaMoneyBillWave />
+            <Lottie options={lottieOptions(fundingAnimation)} height={100} width={100} />
           </div>
           <div className="timeline-content">
             <h2>Funding for Research</h2>
@@ -86,7 +106,7 @@ const Features = () => {
           whileHover="hover"
         >
           <div className="timeline-badge">
-            <FaPlaneDeparture />
+            <Lottie options={lottieOptions(visaAnimation)} height={100} width={100} />
           </div>
           <div className="timeline-content">
             <h2>Visa and Passport Assistance</h2>
@@ -102,7 +122,7 @@ const Features = () => {
           whileHover="hover"
         >
           <div className="timeline-badge">
-            <FaGamepad />
+            <Lottie options={lottieOptions(competitionAnimation)} height={100} width={100} />
           </div>
           <div className="timeline-content">
             <h2>Competition Organization</h2>
@@ -118,7 +138,7 @@ const Features = () => {
           whileHover="hover"
         >
           <div className="timeline-badge">
-            <FaHandshake />
+            <Lottie options={lottieOptions(scholarshipsAnimation)} height={100} width={100} />
           </div>
           <div className="timeline-content">
             <h2>Scholarships</h2>
@@ -134,7 +154,7 @@ const Features = () => {
           whileHover="hover"
         >
           <div className="timeline-badge">
-            <FaUsers />
+            <Lottie options={lottieOptions(globalNetworkAnimation)} height={100} width={100} />
           </div>
           <div className="timeline-content">
             <h2>Global Network</h2>
@@ -150,7 +170,7 @@ const Features = () => {
           whileHover="hover"
         >
           <div className="timeline-badge">
-            <FaMapMarkedAlt />
+            <Lottie options={lottieOptions(successStoriesAnimation)} height={100} width={100} />
           </div>
           <div className="timeline-content">
             <h2>Success Stories</h2>
