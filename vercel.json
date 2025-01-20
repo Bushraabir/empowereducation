@@ -1,0 +1,9 @@
+{
+    "headers": [{
+
+        "headers": [{
+            "key": "Content-Type",
+            "value": "application/javascript"
+        }]
+    }]
+}
