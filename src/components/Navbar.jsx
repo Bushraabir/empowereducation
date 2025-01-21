@@ -20,7 +20,6 @@ const Navbar = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-
       {/* Hamburger Menu Icon */}
       <motion.div
         className="block cursor-pointer md:hidden"
@@ -29,23 +28,23 @@ const Navbar = () => {
         transition={{ type: "spring", stiffness: 300 }}
       >
         <div
-          className={`w-6 h-1 bg-[#5B5B7E] rounded transition-transform duration-300 ease-in-out ${
-            isMenuOpen ? "rotate-45 translate-y-2 bg-teal-400" : ""
+          className={`w-6 h-1 bg-[#59749d] rounded transition-transform duration-300 ease-in-out ${
+            isMenuOpen ? "rotate-45 translate-y-2 bg-teal-500" : ""
           }`}
         ></div>
         <div
-          className={`w-6 h-1 bg-[#5B5B7E] rounded my-1 transition-opacity duration-300 ease-in-out ${
+          className={`w-6 h-1 bg-[#59749d] rounded my-1 transition-opacity duration-300 ease-in-out ${
             isMenuOpen ? "opacity-0" : "opacity-100"
           }`}
         ></div>
         <div
-          className={`w-6 h-1 bg-[#5B5B7E] rounded transition-transform duration-300 ease-in-out ${
-            isMenuOpen ? "-rotate-45 -translate-y-2 bg-teal-400" : ""
+          className={`w-6 h-1 bg-[#59749d] rounded transition-transform duration-300 ease-in-out ${
+            isMenuOpen ? "-rotate-45 -translate-y-2 bg-teal-500" : ""
           }`}
         ></div>
       </motion.div>
 
-      {/* Mobile Dropdown Menu (No Glassmorphism) */}
+      {/* Mobile Dropdown Menu */}
       <motion.div
         className={`absolute top-0 left-0 right-0 md:hidden flex flex-col items-center gap-5 w-full bg-white shadow-lg ${
           isMenuOpen ? "block" : "hidden"
@@ -72,7 +71,7 @@ const Navbar = () => {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="w-6 h-6 text-gray-700"
+            className="w-6 h-6 text-[#334e4c]"
           >
             <path
               strokeLinecap="round"
@@ -101,8 +100,8 @@ const Navbar = () => {
             <NavLink
               to={link.path}
               className={({ isActive }) =>
-                `nav-item ${isActive ? "text-[#5B5B7E]" : "text-[#5B5B7E]"} hover:text-[#5B5B7E] transition-all duration-300 ${
-                  isMenuOpen ? "text-[#5B5B7E]" : ""
+                `nav-item ${isActive ? "text-teal-500" : "text-[#334e4c]"} hover:text-teal-500 transition-all duration-300 ${
+                  isMenuOpen ? "text-[#334e4c]" : ""
                 }`
               }
               onClick={() => setIsMenuOpen(false)}
@@ -144,7 +143,7 @@ const Navbar = () => {
             <NavLink
               to={link.path}
               className={({ isActive }) =>
-                `nav-item ${isActive ? "text-teal-500" : "text-[#5B5B7E]"} hover:text-teal-500 transition-all duration-300`
+                `nav-item ${isActive ? "text-teal-500" : "text-[#59749d]"} hover:text-teal-500 transition-all duration-300`
               }
             >
               {link.name}

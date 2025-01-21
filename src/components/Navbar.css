@@ -1,8 +1,9 @@
 body {
     margin: 0;
     font-family: "Playfair Display", serif;
-    background: linear-gradient(to bottom right, #f0e6ef, #e2f3f5);
+    background: linear-gradient(to bottom right, #e7f4ec, #fdf6e3); /* Soft background gradient */
     scroll-behavior: smooth;
+    color: #334e4c; /* Dark teal for text */
 }
 
 .navbar {
@@ -10,9 +11,10 @@ body {
     z-index: 1000;
     display: flex;
     justify-content: flex-end;
-    /* Align navbar items to the right */
     align-items: center;
     padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent background with blur */
+    backdrop-filter: blur(10px);
 }
 
 .nav-item {
@@ -23,14 +25,20 @@ body {
     letter-spacing: 1px;
     transition: color 0.3s ease, transform 0.3s ease;
     margin-left: 20px;
-    /* Space between navbar items */
+    color: #5a8770; /* Calming greenish color */
 }
 
 .nav-item:hover {
-    color: #008080;
+    color: #334e4c; /* Dark teal on hover */
     transform: translateY(-2px);
 }
 
+/* Hamburger Menu */
+.w-6 {
+    background-color: #5a8770; /* Greenish color for hamburger icon */
+}
+
+/* Mobile Dropdown */
 .navbar .absolute.top-2.right-2 {
     position: absolute;
     top: 1rem;
@@ -38,10 +46,8 @@ body {
 }
 
 .navbar {
-    background-color: rgba(255, 255, 255, 0.1);
-    /* Transparent background with blur effect */
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent background with blur */
     backdrop-filter: blur(10px);
-    /* Blurs the background */
 }
 
 .hover-effect::after {
@@ -51,7 +57,7 @@ body {
     bottom: -4px;
     width: 0;
     height: 2px;
-    background: #14b8a6;
+    background: #5a8770; /* Greenish underline effect */
     transition: width 0.3s ease-in-out;
 }
 
@@ -62,10 +68,26 @@ body {
 @media (max-width: 768px) {
     .nav-item {
         margin-bottom: 15px;
-        color: #110d0d;
-        transition: transform 0.3s ease, opacity 0.3s ease;
+        color: #5a8770; /* Greenish color for mobile items */
     }
-    /* Disable glassmorphism on mobile */
+    .navbar {
+        background-color: transparent;
+        backdrop-filter: none; /* Remove blur on mobile */
+        justify-content: flex-start;
+    }
+    .navbar .absolute.top-2.right-2 {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-item {
+        margin-bottom: 15px;
+        color: #5a8770;
+    }
+    /* Remove glassmorphism on mobile */
     .navbar {
         background-color: transparent;
         /* Solid background for mobile */
