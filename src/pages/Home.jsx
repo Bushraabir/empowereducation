@@ -104,7 +104,7 @@ const Home = () => {
               boxShadow: "0px 4px 15px rgba(255, 207, 207, 0.5)",
             }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => navigate("/features")}
+            onClick={() => navigate("/empowereducation/features")}
           >
             Discover More
           </motion.button>
@@ -130,7 +130,7 @@ const Home = () => {
               boxShadow: "0px 4px 15px rgba(134, 167, 136, 0.5)",
             }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => navigate("/contact")}
+            onClick={() => navigate("/empowereducation/contact")}
           >
             Get in Touch
           </motion.button>

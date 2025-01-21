@@ -95,7 +95,7 @@ const Loader = () => {
           }}
         />
       </motion.div>
-      <h1 className="title">Launcing your journey...</h1>
+      <h1 className="title">Launching your journey...</h1>
     </div>
   );
 };

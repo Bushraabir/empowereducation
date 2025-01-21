@@ -296,7 +296,7 @@ letters.forEach(letter => {
           <p className="hero-subheading">Empowering Dreams, Transforming Lives</p>
           <button 
             className="cta-btn" 
-            onClick={() => navigate('/features')}
+            onClick={() => navigate('/empowereducation/features')}
           >
             Explore More
           </button>
