@@ -160,75 +160,139 @@ const About_us = () => {
     });
 
 
-
-// Helper function to dynamically calculate scale based on screen size
-function getScaleFactor() {
-  const width = window.innerWidth;
-  const height = window.innerHeight;
-  
-  // Calculate a scale factor based on the smaller dimension
-  const scaleFactor = Math.min(width, height) / 1000; // Adjust the divisor as needed for your desired scale
-  return Math.min(scaleFactor, 2); // Limit the maximum scale to avoid overflow
+// Helper function to generate random values for initial position and angle
+function getRandomPosition() {
+  return {
+    x: Math.random() * 100 - 50, // Random X position between -50px and 50px
+    y: Math.random() * 100 - 50, // Random Y position between -50px and 50px
+    rotation: Math.random() * 30 - 15 // Random rotation between -15 and 15 degrees
+  };
 }
 
-// Handle mouseenter and mouseleave for desktop
-heroHeading.addEventListener('mouseenter', () => {
-  console.log('Hover started');
-  isHovering = true;
-  const scale = getScaleFactor() * 2.2; // Scale up based on the screen size
-  // Scale up the heading when mouse enters
-  gsap.to(heroHeading, {
-    scale: scale,
-    duration: 7.5,
-    ease: 'power2.out',
+// Get all letter spans
+const letters = document.querySelectorAll('.letter');
+
+
+// Apply random positions and rotations to each letter
+letters.forEach(letter => {
+  const position = getRandomPosition();
+  gsap.set(letter, {
+    x: position.x,
+    y: position.y,
+    rotation: position.rotation
   });
 });
 
-heroHeading.addEventListener('mouseleave', () => {
-  isHovering = false;
-  // Scale back to the original size when mouse leaves
-  gsap.to(heroHeading, {
-    scale: 1,  // Return to original scale
-    duration: 2.5,
+// Helper function to get the scale factor
+function getScaleFactor() {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  const scaleFactor = Math.min(width, height) / 1000;
+  return Math.min(scaleFactor, 2);
+}
+
+// Handle mouseenter and mouseleave for desktop
+letters.forEach(letter => {
+  letter.addEventListener('mouseenter', () => {
+    if (isHovering) return;
+    isHovering = true;
+    
+    // Enlarge and center the letters
+    gsap.to(letters, {
+      scale: 2,  // Enlarge letters
+      x: 0,      // Reset X position
+      y: 0,      // Reset Y position
+      rotation: 0,  // Reset rotation
+      duration: 1,
+      ease: 'power2.out',
+    });
+  });
+
+  letter.addEventListener('mouseleave', () => {
+    isHovering = false;
+    // Wait for 2 seconds before resetting position
+    gsap.to(letters, {
+      scale: 1,  // Return to original scale
+      x: (i, target) => target._gsap.x,  // Use the original X position (from random set)
+      y: (i, target) => target._gsap.y,  // Use the original Y position (from random set)
+      rotation: (i, target) => target._gsap.rotation,  // Use the original rotation
+      delay: 2,  // Wait for 2 seconds before resetting
+      duration: 1.5,
+      ease: 'power2.out',
+    });
   });
 });
 
 // Handle touchstart and touchend for mobile and tablet
-heroHeading.addEventListener('touchstart', () => {
-  console.log('Touch started');
-  isHovering = true;
-  const scale = getScaleFactor() * 1.2; // Adjust the scale factor for touch interaction
-  // Scale up the heading when touch starts
-  gsap.to(heroHeading, {
-    scale: scale,
-    duration: 7.5,
-    ease: 'power2.out',
+letters.forEach(letter => {
+  letter.addEventListener('touchstart', () => {
+    if (isHovering) return;
+    isHovering = true;
+    
+    // Enlarge and center the letters
+    gsap.to(letters, {
+      scale: 2,  // Enlarge letters
+      x: 0,      // Reset X position
+      y: 0,      // Reset Y position
+      rotation: 0,  // Reset rotation
+      duration: 1,
+      ease: 'power2.out',
+    });
   });
+
+  letter.addEventListener('touchend', () => {
+    isHovering = false;
+    // Wait for 2 seconds before resetting position
+    gsap.to(letters, {
+      scale: 1,  // Return to original scale
+      x: (i, target) => target._gsap.x,  // Use the original X position
+      y: (i, target) => target._gsap.y,  // Use the original Y position
+      rotation: (i, target) => target._gsap.rotation,  // Use the original rotation
+      delay: 2,  // Wait for 2 seconds before resetting
+      duration: 1.5,
+      ease: 'power2.out',
+    });
+  });
+
+
+  letter.addEventListener('touchend', () => {
+    isHovering = false;
+    
+  
+    setTimeout(() => {
+      gsap.to(letters, {
+        scale: 1,  // Return to original scale
+
+        duration: 1.5,
+        ease: 'power2.out',
+      });
+    }, 500); 
+  });
+
+
+  
 });
 
-heroHeading.addEventListener('touchend', () => {
-  isHovering = false;
-  // Scale back to the original size when touch ends
-  gsap.to(heroHeading, {
-    scale: 1,  // Return to original scale
-    duration: 7.5,
-    ease: 'power2.out',
-  });
-});
 
-// Reset scale when page is refreshed (this happens on load)
-gsap.set('.hero-heading', {
-  scale: 1,  // Ensures it starts at its original scale
-  transformOrigin: "center center", // Keep the scale centered
-});
+
   }, []);  // Empty dependency array, ensures useEffect runs once on component mount
   
   return (
     <div className="about-us-container">
       {/* Hero Section */}
       <section className="hero">
-        <div className="hero-content">
-          <h1 className="hero-heading">EmpowerEd</h1>
+        <div className="hero-content ">
+        <h1 class="hero-heading h-full w-full">
+            <span class="letter">E</span>
+            <span class="letter">M</span>
+            <span class="letter">P</span>
+            <span class="letter">O</span>
+            <span class="letter">W</span>
+            <span class="letter">E</span>
+            <span class="letter">R</span>
+            <span class="letter">E</span>
+            <span class="letter">D</span>
+          </h1>
           <p className="hero-subheading">Empowering Dreams, Transforming Lives</p>
           <button 
             className="cta-btn" 

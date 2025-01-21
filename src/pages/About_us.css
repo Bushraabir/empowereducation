@@ -45,10 +45,7 @@ h3,
 }
 
 .hero-heading {
-    font-size: 6rem;
-    font-weight: 700;
-    color: #59749d;
-    /* Muted Blue */
+    color: #59749d; /* Muted Blue */
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
     margin-bottom: 20px;
     text-align: center;
@@ -59,8 +56,29 @@ h3,
     -webkit-text-stroke-width: 4px;
     -webkit-text-stroke-color: #59749d;
     font-family: 'Merriweather', serif;
-    
-}
+    cursor: none;
+    display: inline-block; 
+    width: 100%; 
+    max-width: 100vw; 
+    overflow: visible;
+  }
+  
+  .letter {
+    display: inline-block;
+
+    transition: transform 0.2s ease;
+    transform-origin: center center;
+    position: relative;
+    overflow: visible;
+  }
+  
+
+
+
+
+
+
+
 
 .particle-container {
     position: fixed;
@@ -307,10 +325,7 @@ h3,
 /* Responsive Design Adjustments */
 
 @media (max-width: 768px) {
-    .hero-heading {
-        font-size: 3.5rem;
-        letter-spacing: 1px;
-    }
+
     .hero-subheading {
         font-size: 1.2rem;
     }
@@ -362,4 +377,40 @@ button:focus {
     outline: 2px solid #334e4c;
     /* Coral */
     outline-offset: 4px;
+}
+
+/* Mobile devices (portrait) */
+@media (max-width: 767px) {
+    .hero-heading {
+        font-size: 3rem;
+        padding: 10 10px;
+        -webkit-text-stroke-width: .5px;
+    }
+}
+
+/* Tablets (portrait) */
+@media (max-width: 1024px) {
+    .hero-heading {
+        font-size: 3rem;
+       
+        -webkit-text-stroke-width: 1px;
+    }
+}
+
+/* Larger screens (desktops, laptops) */
+@media (min-width: 1025px) {
+    .hero-heading {
+        font-size: 6rem;
+        padding: 30 30px;
+        -webkit-text-stroke-width: 2px;
+    }
+}
+
+/* Extra large screens (larger desktops) */
+@media (min-width: 1600px) {
+    .hero-heading {
+        font-size: 7rem;
+        padding: 30 30px;
+        -webkit-text-stroke-width: 2px;
+    }
 }
