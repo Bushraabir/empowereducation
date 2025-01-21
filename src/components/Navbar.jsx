@@ -8,9 +8,9 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/empowereducation" },
-    { name: "About Us", path: "/about_us" },
-    { name: "Features", path: "/features" },
-    { name: "Contact", path: "/contact" },
+    { name: "About Us", path: "/empowereducation/about_us" },
+    { name: "Features", path: "/empowereducation/features" },
+    { name: "Contact", path: "/empowereducation/contact" },
   ];
 
   return (

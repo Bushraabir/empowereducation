@@ -29,9 +29,9 @@ const App = () => {
             <Navbar />
             <Routes>
             <Route path="/empowereducation" element={<Home />} />
-              <Route path='/about_us' element={<About_us />} />
-              <Route path='/features' element={<Features />} />
-              <Route path='/contact' element={<Contact />} />
+              <Route path='/empowereducation/about_us' element={<About_us />} />
+              <Route path='/empowereducation/features' element={<Features />} />
+              <Route path='/empowereducation/contact' element={<Contact />} />
             </Routes>
           </>
         )}
